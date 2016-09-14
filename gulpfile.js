@@ -3,8 +3,17 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
+var livereload = require('gulp-livereload');
+var connect = require('gulp-connect');
 
-gulp.task('default', ['styles']);
+gulp.task('default', ['connect', 'watch', 'styles']);
+
+gulp.task('connect', function () {
+    connect.server({
+        root: 'public',
+        livereload: true
+    });
+});
 
 gulp.task('styles', function () {
     return gulp.src([
@@ -16,7 +25,8 @@ gulp.task('styles', function () {
             ]
         }))
         .pipe(concat('app.css'))
-        .pipe(gulp.dest('public/css'));
+        .pipe(gulp.dest('public/css'))
+        .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
