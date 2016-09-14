@@ -1,0 +1,21 @@
+{
+  "name": "radio",
+  "authors": [
+    "Alex Vilchanski <alwizo.com@gmail.com>"
+  ],
+  "description": "radio",
+  "main": "index.js",
+  "keywords": [
+    "radio"
+  ],
+  "license": "MIT",
+  "homepage": "radio.alwizo.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
